@@ -63,13 +63,12 @@ class MoviesController < ApplicationController
 
   def similar
     movie = Movie.find(params[:id])
-    ordering = {:title => :asc}
     #puts "Director = '#{movie.director}'"
     if movie.director.nil? || movie.director.empty?
       flash[:notice] = "'#{movie.title}' has no director info"
       redirect_to movies_path
     else
-      @movies = Movie.where(director: movie.director).order(ordering)
+      @movies = Movie.find_similar(movie)
     end
   end
 
