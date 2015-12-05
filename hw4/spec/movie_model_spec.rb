@@ -1,5 +1,5 @@
 #require 'spec_helper'
-require 'rails_helper'
+require_relative 'rails_helper'
 
 describe Movie do
 

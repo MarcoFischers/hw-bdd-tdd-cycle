@@ -1,5 +1,5 @@
-require 'spec_helper'
-require 'rails_helper'
+require_relative 'spec_helper'
+require_relative 'rails_helper'
  
 RSpec.describe MoviesController, :type => :controller do
   describe 'searching similar movies happy path' do

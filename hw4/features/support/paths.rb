@@ -34,6 +34,8 @@ module NavigationHelpers
       movies = Movie.where(title: $1)
       "/movies/#{movies[0].id}/similar"
 
+    when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
+    
     else
       begin
         page_name =~ /^the (.*) page$/
